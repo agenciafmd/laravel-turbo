@@ -10,6 +10,7 @@ Diminui o tempo de resposta e carregamento da página.
 Veja mais em:
 
 https://github.com/renatomarinho/laravel-page-speed
+
 https://github.com/JosephSilber/page-cache
 
 ## Instalação
