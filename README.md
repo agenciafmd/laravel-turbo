@@ -1,6 +1,6 @@
 # F&MD - Laravel Turbo
 
-![Banner](https://github.com/agenciafmd/laravel-turbo/raw/master/docs/banner.png "Banner")
+![Banner](https://github.com/agenciafmd/laravel-turbo/raw/v11/docs/banner.png "Banner")
 
 [![Downloads](https://img.shields.io/packagist/dt/agenciafmd/laravel-turbo.svg?style=flat-square)](https://packagist.org/packages/agenciafmd/laravel-turbo)
 [![Licença](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
@@ -11,12 +11,14 @@ Veja mais em:
 
 https://github.com/renatomarinho/laravel-page-speed
 
+https://github.com/renatomarinho/laravel-page-speed/pull/190
+
 https://github.com/JosephSilber/page-cache
 
 ## Instalação
 
 ```
-composer require agenciafmd/laravel-turbo:dev-master
+composer require agenciafmd/laravel-turbo:v11.x-dev
 ```
 
 ## Configuração
@@ -35,6 +37,12 @@ Com isso, a nossa rota, será minificada e um arquivo estático relativa a ela s
 Route::get('/', function () {
     return view('welcome');
 })->middleware('turbo');
+```
+outro exemplo
+```php
+Route::get('/', [FrontendController::class, 'index'])
+    ->name('frontend.index')
+    ->middleware('turbo');
 ```
 
 > Não esqueça de configurar o apache / nginx para que o arquivo estático seja consumido.
