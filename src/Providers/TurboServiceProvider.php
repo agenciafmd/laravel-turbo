@@ -6,19 +6,19 @@ use Illuminate\Support\ServiceProvider;
 
 class TurboServiceProvider extends ServiceProvider
 {
-    public function boot()
+    public function boot(): void
     {
         $this->setMiddlewares();
 
         $this->publish();
     }
 
-    public function register()
+    public function register(): void
     {
         $this->loadConfigs();
     }
 
-    protected function setMiddlewares()
+    protected function setMiddlewares(): void
     {
         $turboGroup = [];
         if (config('laravel-turbo.enable')) {
@@ -28,15 +28,15 @@ class TurboServiceProvider extends ServiceProvider
         $this->app->router->middlewareGroup('turbo', $turboGroup);
     }
 
-    protected function loadConfigs()
+    protected function loadConfigs(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/laravel-turbo.php', 'laravel-turbo');
+        $this->mergeConfigFrom(__DIR__ . '/../../config/laravel-turbo.php', 'laravel-turbo');
     }
 
-    protected function publish()
+    protected function publish(): void
     {
         $this->publishes([
-            __DIR__ . '/../config' => base_path('config'),
+            __DIR__ . '/../../config' => base_path('config'),
         ], 'laravel-turbo:config');
     }
 }

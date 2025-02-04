@@ -12,5 +12,5 @@ return [
         RemoveComments::class,
         RemoveQuotes::class,
         CollapseWhitespace::class,
-    ]
+    ],
 ];
