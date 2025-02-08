@@ -11,15 +11,9 @@
             "role": "Developer"
         }
     ],
-    "repositories": {
-        "renatomarinho/laravel-page-speed": {
-            "type": "vcs",
-            "url": "https://github.com/laravel-shift/laravel-page-speed.git"
-        }
-    },
     "require": {
         "laravel/framework": "^11.0",
-        "renatomarinho/laravel-page-speed": "dev-l11-compatibility",
+        "agenciafmd/laravel-page-speed": "v11.x-dev",
         "silber/page-cache": "^1.0"
     },
     "config": {
