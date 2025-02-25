@@ -10,12 +10,12 @@ class TurboServiceProvider extends ServiceProvider
     {
         $this->setMiddlewares();
 
-        $this->publish();
+        $this->bootPublish();
     }
 
     public function register(): void
     {
-        $this->loadConfigs();
+        $this->registerConfigs();
     }
 
     protected function setMiddlewares(): void
@@ -28,12 +28,12 @@ class TurboServiceProvider extends ServiceProvider
         $this->app->router->middlewareGroup('turbo', $turboGroup);
     }
 
-    protected function loadConfigs(): void
+    protected function registerConfigs(): void
     {
         $this->mergeConfigFrom(__DIR__ . '/../../config/laravel-turbo.php', 'laravel-turbo');
     }
 
-    protected function publish(): void
+    protected function bootPublish(): void
     {
         $this->publishes([
             __DIR__ . '/../../config' => base_path('config'),
