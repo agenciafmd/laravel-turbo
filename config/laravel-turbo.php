@@ -1,14 +1,16 @@
 <?php
 
-use VinkiusLabs\LaravelPageSpeed\Middleware\CollapseWhitespace;
+declare(strict_types=1);
+
+use Agenciafmd\Turbo\Middlewares\CollapseWhitespace;
+use Agenciafmd\Turbo\Middlewares\RemoveComments;
+use Silber\PageCache\Middleware\CacheResponse;
 use VinkiusLabs\LaravelPageSpeed\Middleware\ElideAttributes;
 use VinkiusLabs\LaravelPageSpeed\Middleware\InsertDNSPrefetch;
-use VinkiusLabs\LaravelPageSpeed\Middleware\RemoveComments;
 use VinkiusLabs\LaravelPageSpeed\Middleware\RemoveQuotes;
-use Silber\PageCache\Middleware\CacheResponse;
 
 return [
-    'enable' => env('TURBO_ENABLE', true),
+    'enabled' => env('TURBO_ENABLED', true),
     'middlewares' => [
         CacheResponse::class,
         RemoveComments::class,

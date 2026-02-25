@@ -52,7 +52,7 @@ Route::get('/', [FrontendController::class, 'index'])
 
 No `.env`
 ```dotenv
-TURBO_ENABLE=false
+TURBO_ENABLED=false
 ```
 
 ### Para customizar as middlewares de otimização. 

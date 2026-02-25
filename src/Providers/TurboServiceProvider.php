@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Agenciafmd\Turbo\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class TurboServiceProvider extends ServiceProvider
+final class TurboServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
@@ -21,7 +23,7 @@ class TurboServiceProvider extends ServiceProvider
     protected function setMiddlewares(): void
     {
         $turboGroup = [];
-        if (config('laravel-turbo.enable')) {
+        if (config('laravel-turbo.enabled')) {
             $turboGroup = array_merge($turboGroup, config('laravel-turbo.middlewares'));
         }
 
