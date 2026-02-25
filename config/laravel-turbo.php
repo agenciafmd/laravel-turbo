@@ -1,8 +1,10 @@
 <?php
 
-use RenatoMarinho\LaravelPageSpeed\Middleware\CollapseWhitespace;
-use RenatoMarinho\LaravelPageSpeed\Middleware\RemoveComments;
-use RenatoMarinho\LaravelPageSpeed\Middleware\RemoveQuotes;
+use VinkiusLabs\LaravelPageSpeed\Middleware\CollapseWhitespace;
+use VinkiusLabs\LaravelPageSpeed\Middleware\ElideAttributes;
+use VinkiusLabs\LaravelPageSpeed\Middleware\InsertDNSPrefetch;
+use VinkiusLabs\LaravelPageSpeed\Middleware\RemoveComments;
+use VinkiusLabs\LaravelPageSpeed\Middleware\RemoveQuotes;
 use Silber\PageCache\Middleware\CacheResponse;
 
 return [
@@ -11,6 +13,9 @@ return [
         CacheResponse::class,
         RemoveComments::class,
         RemoveQuotes::class,
+        /* não mude a ordem */
+        ElideAttributes::class,
+        InsertDNSPrefetch::class,
         CollapseWhitespace::class,
     ],
 ];
