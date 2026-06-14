@@ -12,7 +12,7 @@
         }
     ],
     "require": {
-        "laravel/framework": "^12.0",
+        "laravel/framework": "^12.0|^13.0",
         "vinkius-labs/laravel-page-speed": "^4.0",
         "silber/page-cache": "^1.1"
     },
