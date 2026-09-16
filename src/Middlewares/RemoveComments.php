@@ -10,7 +10,7 @@ final class RemoveComments extends RemoveCommentsBase
 {
     protected function replaceInsideHtmlTags(array $tags, string $regex, string $replace, string $buffer): string
     {
-        if (($key = array_search('style', $tags)) !== false) {
+        if (($key = array_search('style', $tags, true)) !== false) {
             unset($tags[$key]);
         }
 
