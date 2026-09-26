@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Agenciafmd\Turbo\Providers;
 
+use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 
 final class TurboServiceProvider extends ServiceProvider
@@ -24,10 +25,10 @@ final class TurboServiceProvider extends ServiceProvider
     {
         $turboGroup = [];
         if (config('laravel-turbo.enabled')) {
-            $turboGroup = array_merge($turboGroup, config('laravel-turbo.middlewares'));
+            $turboGroup = array_merge($turboGroup, config()->array('laravel-turbo.middlewares', []));
         }
 
-        $this->app->router->middlewareGroup('turbo', $turboGroup);
+        $this->app->make(Router::class)->middlewareGroup('turbo', $turboGroup);
     }
 
     private function registerConfigs(): void

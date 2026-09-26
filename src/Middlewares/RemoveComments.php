@@ -8,6 +8,11 @@ use VinkiusLabs\LaravelPageSpeed\Middleware\RemoveComments as RemoveCommentsBase
 
 final class RemoveComments extends RemoveCommentsBase
 {
+    /**
+     * Mantém os comentários dentro de `<style>`.
+     *
+     * @param  array<int, string>  $tags
+     */
     protected function replaceInsideHtmlTags(array $tags, string $regex, string $replace, string $buffer): string
     {
         if (($key = array_search('style', $tags, true)) !== false) {

@@ -8,6 +8,9 @@ use VinkiusLabs\LaravelPageSpeed\Middleware\CollapseWhitespace as CollapseWhites
 
 final class CollapseWhitespace extends CollapseWhitespaceBase
 {
+    /**
+     * @param  string  $buffer
+     */
     protected function removeComments($buffer): string
     {
         return (new RemoveComments)->apply($buffer);
